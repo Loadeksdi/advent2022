@@ -36,7 +36,7 @@ fn main() {
         top_three_calories += val;
         i += 1;
     }
-    println!("The top three calories are: {}", top_three_calories);
+    println!("The sum of the top three calories are: {}", top_three_calories);
 }
 
 // Read input file, taken from rust-by-example
