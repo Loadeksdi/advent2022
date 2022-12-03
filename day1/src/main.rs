@@ -22,8 +22,21 @@ fn main() {
             }
         }
     }
-    let max_val: &i32 = total_calories.iter().max().unwrap();
-    println!("Max calories: {}", max_val);
+    let mut top_three_calories: i32 = 0;
+    let mut i = 0;
+    while i < 3{
+        // Find the index of the maximum value in the total calories vector
+        let index_of_max: Option<usize> = total_calories
+            .iter()
+            .enumerate()
+            .max_by(|(_, a), (_, b)| a.cmp(b))
+            .map(|(index, _)| index);
+        // Remove the maximum value from the total calories vector and add it to the top three calories
+        let val:i32 = total_calories.swap_remove(index_of_max.unwrap());
+        top_three_calories += val;
+        i += 1;
+    }
+    println!("The top three calories are: {}", top_three_calories);
 }
 
 // Read input file, taken from rust-by-example
