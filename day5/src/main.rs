@@ -51,7 +51,7 @@ fn main() {
                             counter += 1;
                         } else {
                             four += 1;
-                            // Every 4 empty crates, we have to skip a stack
+                            // Every 4 empty strings, we have to skip a stack
                             if four % 4 == 0 {
                                 counter += 1;
                             }
