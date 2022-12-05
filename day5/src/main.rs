@@ -31,9 +31,6 @@ fn main() {
                     let to_stack: usize = instructions[2];
                     for _i in 0..(number_of_crate_to_move) {
                         let crate_in_stack = stacks[from_stack - 1].pop();
-                        if crate_in_stack.is_none() {
-                            continue;
-                        }
                         stacks[to_stack - 1].push(crate_in_stack.unwrap());
                     }
                 } else {
